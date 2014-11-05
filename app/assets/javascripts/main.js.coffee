@@ -4,7 +4,11 @@
 # HomeCtrl specifically. This is basically how we tell
 # Angular about the existence of our application.
 
-@jobber = angular.module('jobber', ['ngResource'])
+@jobber = angular.module("jobber", ["ngResource"])
+
+@jobber.factory "Job", ["$resource", ($resource) ->
+   $resource("/jobs/:id", {id: "@id"}, {update: {method: "PUT"}})
+  ]
 
 # This routing directive tells Angular about the default
 # route for our application. The term "otherwise" here
