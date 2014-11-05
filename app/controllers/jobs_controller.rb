@@ -1,23 +1,33 @@
 class JobsController < ApplicationController
-  respond_to :json
+
 
   def index
-    respond_with Job.all
+    @jobs = Job.all
+    render json: @jobs
   end
 
   def show
-    respond_with Job.find(params[:id])
-  end
+      @job = Job.find(params[:id])
+      render json: @job
+    end
+
 
   def create
-    respond_with Job.create(params[:entry])
+    @job = Job.create(job_params)
   end
 
   def update
-    respond_with Job.update(params[:id], params[:entry])
+    respond_with Job.update(params[:id], params[:job])
   end
 
   def destroy
     respond_with Job.destroy(params[:id])
   end
+
+  private
+     # Never trust parameters from the scary internet, only allow the white list through.
+    def job_params
+      params.require(:job).permit(:name)
+    end
+
 end
