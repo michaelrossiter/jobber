@@ -12,7 +12,13 @@
 
 @jobber.config(['$routeProvider', ($routeProvider) ->
   $routeProvider.
-    otherwise({
+    when('/jobs', {
+      templateUrl: '../templates/jobs/index.html',
+      controller: 'JobIndexCtrl'
+    }).when('/jobs/:id', {
+      templateUrl: '../templates/jobs/show.html',
+      controller: 'JobShowCtrl'
+    }).otherwise({
       templateUrl: '../templates/home.html',
       controller: 'HomeCtrl'
     }) 

@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Job.create([
+  { name: "JP Morgan" },
+  { name: "McKinsey and Company" },
+  { name: "Bain Capital" },
+  { name: "Google" },
+  { name: "Amazon" },
+])

@@ -1,0 +1,5 @@
+<!-- public/templates/jobs/index.html -->
+<a href="/#">index</a>
+<ul ng-repeat="job in jobs">
+  <li><a ng-click="viewJob(job.id)">{{ job.name }}</a></li>
+</ul>
