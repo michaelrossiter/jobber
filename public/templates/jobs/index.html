@@ -1,5 +1,13 @@
 <!-- public/templates/jobs/index.html -->
 <a href="/#">index</a>
-<ul ng-repeat="job in jobs">
-  <li><a ng-click="viewJob(job.id)">{{ job.name }}</a></li>
+
+<!-- add a job form -->
+<form ng-submit="addJob()">
+	<input type="text" ng-model="newJob.name" placeholder="Enter a new job here">
+	<input type="submit" value="Add Job">
+</form>
+
+<ul>
+  <li ng-repeat="job in jobs"><a ng-click="viewJob(job.id)">{{ job.name }}</a></li>
+  <li>{{newJob.name}}</li>
 </ul>
