@@ -1,6 +1,5 @@
 class JobsController < ApplicationController
 
-
   def index
     @jobs = Job.all
     render json: @jobs
@@ -11,9 +10,9 @@ class JobsController < ApplicationController
       render json: @job
     end
 
-
   def create
     @job = Job.create(job_params)
+
   end
 
   def update
@@ -21,7 +20,8 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    respond_with Job.destroy(params[:id])
+    Job.destroy(params[:id])
+    render :json=>true
   end
 
   private

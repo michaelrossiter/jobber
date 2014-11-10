@@ -1,13 +1,44 @@
 <!-- public/templates/jobs/index.html -->
-<a href="/#">index</a>
 
-<!-- add a job form -->
-<form ng-submit="addJob()">
-	<input type="text" ng-model="newJob.name" placeholder="Enter a new job here">
-	<input type="submit" value="Add Job">
-</form>
+<nav class="navbar navbar-default" role="navigation">
+	<ul class="nav nav-tabs" role="tablist">
+	  <li role="presentation" class="active"><a href="#">Experiences</a></li>
+	  <li role="presentation"><a href="#">Applications</a></li>
+	  <li role="presentation"><a href="#">Resumes</a></li>
+	</ul>
+</nav>
 
-<ul>
-  <li ng-repeat="job in jobs"><a ng-click="viewJob(job.id)">{{ job.name }}</a></li>
-  <li>{{newJob.name}}</li>
-</ul>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		In many ways, a resume is how you tell your 'story' to an employer. Your story is made up of your relevant past experiences, including professional, educational, and sometimes even personal. To get started, add a few experiences! 
+	</div>
+</div>
+
+<div class="row" style="margin-top:20px;"></div>
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		
+		<!-- add a job form -->
+		<form ng-submit="addJob()" class=>
+			<input type="text" ng-model="newJob.name" placeholder="Enter a new experience here">
+			<input type="submit" value="Add Experience">
+		</form>
+	
+	</div>
+</div>
+
+<div class="row" style="margin-top:20px;"></div>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<ul>
+		  <li ng-repeat="job in jobs"><a ng-click="viewJob(job.id)">{{job.name}}</a>
+		     <span class="glyphicon glyphicon-remove-circle pull-right" ng-click="deleteJob($index)"></span>
+<!-- 		  	<button type="button" class="btn btn-danger btn-xs" ng-click="deleteJob($index)">Delete</button>
+ -->		  </li>
+		  <li>{{newJob.name}}</li>
+		</ul>
+	</div>
+</div>
