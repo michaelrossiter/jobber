@@ -25,6 +25,6 @@
       controller: 'JobShowCtrl'
     }).otherwise({
       templateUrl: '../templates/jobs/index.html',
-      controller: 'HomeCtrl'
+      controller: 'JobIndexCtrl'
     }) 
 ])
