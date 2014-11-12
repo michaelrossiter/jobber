@@ -38,7 +38,10 @@ gem 'factory_girl_rails', '4.2.1', :group => :test
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn', :group => :production
+
+# Bower to manager front-end frameworks
+gem 'bower-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
