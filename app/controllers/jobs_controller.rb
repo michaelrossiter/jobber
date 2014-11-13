@@ -15,8 +15,14 @@ class JobsController < ApplicationController
 
   end
 
+  def edit
+    @job = Job.update(job_params)
+    render :json => true
+  end
+
   def update
-    respond_with Job.update(params[:id], params[:job])
+    @job = Job.update(job_params)
+    render :json => true
   end
 
   def destroy

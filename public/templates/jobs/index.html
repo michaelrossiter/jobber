@@ -11,7 +11,7 @@
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
-		In many ways, a resume is how you tell your 'story' to an employer. Your story is made up of your relevant past experiences, including professional, educational, and sometimes even personal. To get started, add a few experiences! 
+		Your resume tells your 'story' to a potential employer. Your story is made up of your relevant past experiences, including professional, educational, and sometimes even personal. To get started, add a few experiences!
 	</div>
 </div>
 
@@ -20,7 +20,7 @@
 <div class="row">
 	<div class="col-md-4 col-md-offset-4">
 		
-		<!-- add a job form -->
+		<!-- NEW JOB FORM -->
 		<form ng-submit="addJob()" class=>
 			<input type="text" ng-model="newJob.name" placeholder="Enter a new experience here">
 			<input type="submit" value="Add Experience">
@@ -34,10 +34,21 @@
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 		<ul>
-		  <li ng-repeat="job in jobs"><span ng-click="editJob(job.id)">{{job.name}}</span>
-		     <span class="glyphicon glyphicon-remove-circle pull-right" ng-click="deleteJob($index)"></span>
-<!-- 		  	<button type="button" class="btn btn-danger btn-xs" ng-click="deleteJob($index)">Delete</button>
- -->		  </li>
+		  <li ng-repeat="job in jobs">
+		  		
+		  		<span ng-hide="custom">
+
+
+				<form ng-submit="editJob()" >
+					<input type="text" ng-model="updateJob.name" placeholder="{{job.name}}">
+					<input type="submit" value="Update">
+				</form>
+
+
+		  		</span>
+		  		<span ng-click="custom=!custom" ng-show="custom">{{job.name}}</span>
+		   <span ng-show="custom" class="glyphicon glyphicon-remove-circle pull-right" ng-click="deleteJob($index)"></span>
+		  </li>
 		  <li>{{newJob.name}}</li>
 		</ul>
 	</div>

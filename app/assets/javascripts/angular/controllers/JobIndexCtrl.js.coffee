@@ -10,10 +10,15 @@
     $scope.newJob = {}
 
   $scope.deleteJob = ($index) ->
-      $scope.jobs[$index].$delete()
-      # Remove from the local array
-      $scope.jobs.splice($index, 1)
-   
+    $scope.jobs[$index].$delete()
+    # Remove from the local array
+    $scope.jobs.splice($index, 1)
+
+  $scope.editJob = ($index) ->
+    $scope.jobs[$index].update($scope.updateJob)
+    $scope.custom=!$scope.custom
+
+  $scope.custom = true
 
   $scope.viewJob = (id) ->
     $location.url "/jobs/#{id}"
