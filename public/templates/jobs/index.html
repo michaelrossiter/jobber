@@ -34,7 +34,7 @@
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 		<ul>
-		  <li ng-repeat="job in jobs"><a ng-click="viewJob(job.id)">{{job.name}}</a>
+		  <li ng-repeat="job in jobs"><span ng-click="editJob(job.id)">{{job.name}}</span>
 		     <span class="glyphicon glyphicon-remove-circle pull-right" ng-click="deleteJob($index)"></span>
 <!-- 		  	<button type="button" class="btn btn-danger btn-xs" ng-click="deleteJob($index)">Delete</button>
  -->		  </li>
