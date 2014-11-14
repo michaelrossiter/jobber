@@ -21,7 +21,8 @@ class JobsController < ApplicationController
   end
 
   def update
-    @job = Job.update(params[:id, :name])
+    @job = Job.find(params[:id])
+    @job.update_attributes(job_params)
     render :json => true
   end
 
@@ -33,7 +34,7 @@ class JobsController < ApplicationController
   private
      # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:name)
+      params.require(:job).permit(:name,:id, :created_at, :updated_at)
     end
 
 end
