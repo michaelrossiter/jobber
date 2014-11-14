@@ -21,7 +21,7 @@ class JobsController < ApplicationController
   end
 
   def update
-    @job = Job.update(job_params)
+    @job = Job.update(params[:id, :name])
     render :json => true
   end
 

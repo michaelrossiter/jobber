@@ -15,7 +15,7 @@
     $scope.jobs.splice($index, 1)
 
   $scope.editJob = ($index) ->
-    $scope.jobs[$index].update($scope.updateJob)
+    $scope.jobs[$index].$update($scope.updateJob)
     $scope.custom=!$scope.custom
 
   $scope.custom = true

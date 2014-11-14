@@ -39,7 +39,7 @@
 		  		<span ng-hide="custom">
 
 
-				<form ng-submit="editJob()" >
+				<form ng-submit="editJob($index)" >
 					<input type="text" ng-model="updateJob.name" placeholder="{{job.name}}">
 					<input type="submit" value="Update">
 				</form>
@@ -47,6 +47,7 @@
 
 		  		</span>
 		  		<span ng-click="custom=!custom" ng-show="custom">{{job.name}}</span>
+		   
 		   <span ng-show="custom" class="glyphicon glyphicon-remove-circle pull-right" ng-click="deleteJob($index)"></span>
 		  </li>
 		  <li>{{newJob.name}}</li>
