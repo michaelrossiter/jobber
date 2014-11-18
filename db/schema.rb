@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118201254) do
+ActiveRecord::Schema.define(version: 20141118210428) do
+
+  create_table "bullets", force: true do |t|
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "job_bullets", force: true do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "job_id"
+    t.integer  "bullet_id"
+  end
 
   create_table "jobs", force: true do |t|
     t.string   "name"
