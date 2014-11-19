@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118210428) do
+ActiveRecord::Schema.define(version: 20141118235224) do
 
   create_table "bullets", force: true do |t|
     t.text     "content"
@@ -36,5 +36,18 @@ ActiveRecord::Schema.define(version: 20141118210428) do
   end
 
   add_index "jobs", ["name"], name: "index_jobs_on_name", unique: true
+
+  create_table "resume_jobs", force: true do |t|
+    t.integer  "resume_id"
+    t.integer  "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "resumes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
