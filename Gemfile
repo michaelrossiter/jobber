@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -6,6 +6,11 @@ gem 'rails', '4.2.0.beta2'
 # Use sqlite for development and test, postgres for production 
 gem 'sqlite3', '1.3.8', :groups => [:development, :test]
 gem 'pg', '0.15.1', :group => :production
+
+
+# Active Model Serializers for generating json api
+gem 'active_model_serializers', '~> 0.8.x'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0.beta1'
