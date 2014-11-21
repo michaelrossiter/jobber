@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118235224) do
+ActiveRecord::Schema.define(version: 20141119002256) do
+
+  create_table "applications", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bullets", force: true do |t|
     t.text     "content"
