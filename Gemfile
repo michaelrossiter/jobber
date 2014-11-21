@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -9,7 +9,7 @@ gem 'pg', '0.15.1', :group => :production
 
 
 # Active Model Serializers for generating json api
-gem 'active_model_serializers', '~> 0.8.x'
+gem 'active_model_serializers', github: "rails-api/active_model_serializers"
 
 
 # Use SCSS for stylesheets

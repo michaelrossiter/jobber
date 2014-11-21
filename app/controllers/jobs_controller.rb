@@ -7,7 +7,7 @@ class JobsController < ApplicationController
 
   def show
       @job = Job.find(params[:id])
-      render json: @job
+      render json: @job, serializer: JobSerializer
     end
 
   def create

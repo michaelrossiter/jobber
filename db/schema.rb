@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119002256) do
+ActiveRecord::Schema.define(version: 20141121044042) do
 
   create_table "applications", force: true do |t|
     t.string   "name"
@@ -52,8 +52,9 @@ ActiveRecord::Schema.define(version: 20141119002256) do
 
   create_table "resumes", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "application_id"
   end
 
 end
